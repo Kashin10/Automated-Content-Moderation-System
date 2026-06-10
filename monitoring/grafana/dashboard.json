@@ -1,0 +1,119 @@
+{
+  "dashboard": {
+    "title": "Automated Content Moderation System",
+    "version": "1.0",
+    "refreshInterval": "30s",
+    "environment": "production",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Deployment Time",
+        "type": "stat",
+        "unit": "minutes",
+        "value": 5,
+        "threshold": 10
+      },
+      {
+        "id": 2,
+        "title": "System Throughput",
+        "type": "gauge",
+        "unit": "req/sec",
+        "value": 250,
+        "max": 500
+      },
+      {
+        "id": 3,
+        "title": "CPU Utilization",
+        "type": "gauge",
+        "unit": "percent",
+        "value": 65,
+        "max": 100
+      },
+      {
+        "id": 4,
+        "title": "Memory Utilization",
+        "type": "gauge",
+        "unit": "percent",
+        "value": 75,
+        "max": 100
+      },
+      {
+        "id": 5,
+        "title": "Monthly Downtime",
+        "type": "stat",
+        "unit": "minutes",
+        "value": 8
+      },
+      {
+        "id": 6,
+        "title": "Error Recovery Time",
+        "type": "stat",
+        "unit": "minutes",
+        "value": 3
+      },
+      {
+        "id": 7,
+        "title": "Image Moderation Rate",
+        "type": "timeseries",
+        "unit": "images/min",
+        "value": 50
+      },
+      {
+        "id": 8,
+        "title": "Text Moderation Rate",
+        "type": "timeseries",
+        "unit": "texts/min",
+        "value": 250
+      },
+      {
+        "id": 9,
+        "title": "Deployment Success Rate",
+        "type": "stat",
+        "unit": "percent",
+        "value": 99.2
+      },
+      {
+        "id": 10,
+        "title": "Infrastructure Health",
+        "type": "status",
+        "value": "Healthy"
+      }
+    ],
+    "alerts": [
+      {
+        "name": "High CPU Usage",
+        "condition": "cpu > 80",
+        "severity": "warning"
+      },
+      {
+        "name": "Critical CPU Usage",
+        "condition": "cpu > 90",
+        "severity": "critical"
+      },
+      {
+        "name": "High Memory Usage",
+        "condition": "memory > 85",
+        "severity": "warning"
+      },
+      {
+        "name": "Low Throughput",
+        "condition": "throughput < 100",
+        "severity": "critical"
+      },
+      {
+        "name": "Deployment Failure",
+        "condition": "deployment_status == failed",
+        "severity": "critical"
+      }
+    ],
+    "kpis": {
+      "deploymentTime": "5m",
+      "throughput": "250 req/sec",
+      "downtime": "8 min/month",
+      "errorRecovery": "3 min",
+      "resourceEfficiency": "85%",
+      "costPerModeration": "$0.06",
+      "deploymentFrequency": "15/month"
+    }
+  }
+}
